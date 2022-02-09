@@ -39,6 +39,14 @@ public class CommonPage<T> {
     private List<T> list;
 
 
+    CommonPage(Page<T> pageInfo){
+        pageNum=pageInfo.getPageNum();
+        list=pageInfo.getResult();
+        total=pageInfo.getTotal();
+        totalPage=pageInfo.getPages();
+        pageSize=pageInfo.getPageSize();
+
+    }
     //直接使用pagehelper进行分页，然后分页的数据进行返回
     //将排好序的数据进行分页
 
