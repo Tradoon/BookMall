@@ -18,4 +18,8 @@ public interface AdminService {
      * 登录功能
      */
     CommonResult<UmsAdmin> login(UmsAdmin user);
+    /**
+     * 获取指定用户id
+     */
+    CommonResult<UmsAdmin> getItem(Long id);
 }

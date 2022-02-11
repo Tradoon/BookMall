@@ -72,4 +72,13 @@
         </if>
         limit 1
     </select>
+    <select id="selectByPrimaryKey" resultType="com.tradoon.mallmbg.model.UmsAdmin">
+        select username,password,icon,email,nick_name,note,create_time,login_time
+        from ums_admin
+        where status=1
+        <if test="id!=null">
+            and id=#{id}
+        </if>
+
+    </select>
 </mapper>

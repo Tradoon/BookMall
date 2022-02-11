@@ -63,4 +63,13 @@ public class AdminServiceImpl implements AdminService {
         }
         return CommonResult.failed();
     }
+
+    @Override
+    public CommonResult<UmsAdmin> getItem(Long id) {
+        if(id!=null){
+            UmsAdmin admin = adminMapper.selectByPrimaryKey(id);
+            return CommonResult.success(admin);
+        }
+        return CommonResult.failed();
+    }
 }
