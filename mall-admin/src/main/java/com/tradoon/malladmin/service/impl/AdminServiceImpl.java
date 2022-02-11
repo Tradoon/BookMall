@@ -72,4 +72,14 @@ public class AdminServiceImpl implements AdminService {
         }
         return CommonResult.failed();
     }
+
+    @Override
+    public void update(Long id,UmsAdmin admin) {
+        if (admin != null&&id!=null) {
+            admin.setId(id);
+            //todo 前端是不是传过来的admin里面没有id，有的话根本没必要set
+            int num = adminMapper.updateByPrimaryKeySelective(admin);
+            return ;
+        }
+    }
 }

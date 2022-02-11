@@ -22,4 +22,6 @@ public interface AdminService {
      * 获取指定用户id
      */
     CommonResult<UmsAdmin> getItem(Long id);
+
+    void update(Long id,UmsAdmin admin);
 }

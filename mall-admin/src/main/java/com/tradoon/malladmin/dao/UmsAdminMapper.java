@@ -29,7 +29,7 @@ public interface UmsAdminMapper {
 
     public UmsAdmin selectByPrimaryKey(@Param("id")Long id);
 
-
+    public int updateByPrimaryKeySelective(@Param("admin")UmsAdmin admin);
 
 
 

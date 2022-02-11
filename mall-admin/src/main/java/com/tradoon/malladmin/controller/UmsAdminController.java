@@ -33,6 +33,15 @@ public class UmsAdminController {
 @ApiOperation(value = "获取指定用户的信息",httpMethod = "GET")
 @GetMapping("/{id}")
     public CommonResult<UmsAdmin> getItem(@PathVariable Long id){
-        return null;
+        return adminService.getItem(id);
 }
+
+    @ApiOperation(value = "修改指定用户的信息",httpMethod = "POST")
+    @PostMapping("/update/{id}")
+    //todo 既有PathVarible 又有requestBody 不符合常理
+    public void update(@PathVariable Long id,@RequestBody UmsAdmin admin){
+        adminService.update(id,admin);
+        return ;
+    }
+
 }
