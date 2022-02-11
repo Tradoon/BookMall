@@ -1,5 +1,7 @@
 package com.tradoon.malladmin.service;
 
+import com.tradoon.bookmall.common.api.CommonResult;
+import com.tradoon.bookmall.common.api.ResultCode;
 import com.tradoon.mallmbg.model.UmsAdmin;
 
 /**
@@ -11,5 +13,9 @@ public interface AdminService {
     /**
      * 注册功能
      */
-    UmsAdmin register(UmsAdmin user);
+    CommonResult<UmsAdmin> register(UmsAdmin user);
+    /**
+     * 登录功能
+     */
+    CommonResult<UmsAdmin> login(UmsAdmin user);
 }

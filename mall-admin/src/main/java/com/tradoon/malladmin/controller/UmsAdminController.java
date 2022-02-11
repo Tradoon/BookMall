@@ -21,11 +21,15 @@ public class UmsAdminController {
 
     @Autowired
     AdminService adminService;
-    @ApiOperation(value ="用户注册",httpMethod = "Post")
+    @ApiOperation(value ="用户注册",httpMethod = "POST")
     @PostMapping("/register")
     public CommonResult<UmsAdmin> register(UmsAdmin user){
-        UmsAdmin userTmp = adminService.register(user);
-        return userTmp==null?
-                CommonResult.failed(ResultCode.NameRepeated.getCode(),ResultCode.NameRepeated.getMessage()):CommonResult.success(userTmp);
+
+        return  adminService.register(user);
     }
+    @ApiOperation(value = "用户登录",httpMethod = "POST")
+    @PostMapping("/login")
+    public CommonResult login(UmsAdmin user){
+        return adminService.login(user);
+}
 }
