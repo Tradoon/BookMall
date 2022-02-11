@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,13 +17,15 @@ import java.util.Date;
 @Component
 @Data
 public class UmsAdmin implements Serializable {
-
+    @NotEmpty
     @ApiModelProperty(value = "id",required = true)
     private long id;
 
+    @NotEmpty
     @ApiModelProperty(value = "用户名",required = true)
     private String username;
 
+    @NotEmpty
     @ApiModelProperty(value = "加密后密码",required = true)
     private String password;
 

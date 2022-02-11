@@ -3,4 +3,73 @@
 <mapper namespace="com.tradoon.malladmin.dao.UmsAdminMapper">
 
 
+    <insert id="insertAdmin">
+        insert into ums_admin(
+        <trim suffixOverrides=",">
+            <if test="username!=null">
+                username,
+            </if>
+            <if test="password!=null">
+                password,
+            </if>
+            <if test="icon!=null">
+                icon,
+            </if>
+            <if test="email!=null">
+                email,
+            </if>
+            <if test="nickName!=null">
+            nick_name,
+            </if>
+            <if test="note!=null">
+                note,
+            </if>
+            <if test="createTime!=null">
+                create_time,
+            </if>
+            <if test="loginTime!=null">
+                login_time
+            </if>
+        </trim>
+                )
+        values(
+        <trim suffixOverrides=",">
+            <if test="username!=null">
+                #{username},
+            </if>
+            <if test="password!=null">
+                #{password},
+            </if>
+            <if test="icon!=null">
+                #{icon},
+            </if>
+            <if test="email!=null">
+                #{email},
+            </if>
+            <if test="nickName!=null">
+                #{nickName},
+            </if>
+            <if test="note!=null">
+                #{note},
+            </if>
+            <if test="createTime!=null">
+                {createTime},
+            </if>
+            <if test="loginTime!=null">
+                #{loginTime}
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByNameAndKey" resultType="com.tradoon.mallmbg.model.UmsAdmin">
+        select username,password,icon,email,nick_name,note,create_time,login_time
+        from ums_admin
+        where status=1
+        <if test="username">
+            and username=#{username}
+        </if>
+        <if test="password!=null">
+            and password=#{password}
+        </if>
+        limit 1
+    </select>
 </mapper>
