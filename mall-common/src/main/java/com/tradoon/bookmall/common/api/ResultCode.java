@@ -7,7 +7,8 @@ package com.tradoon.bookmall.common.api;
  */
 public enum ResultCode {
     SUCCESS(200,"请求成功"),
-    FAILED(500,"服务器内部错误");
+    FAILED(500,"服务器内部错误"),
+    NameRepeated(2000,"用户名重复");
     //枚举依赖全参构造函数
     //枚举之间是，分割
     //todo 还待增加

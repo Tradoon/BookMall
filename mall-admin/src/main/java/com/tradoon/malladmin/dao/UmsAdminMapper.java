@@ -16,6 +16,7 @@ public interface UmsAdminMapper {
      * @param user
      * @return 操作行数
      */
+
     public int insertAdmin(UmsAdmin user);
 
     public UmsAdmin selectByNameAndKey(@Param("username")String username,@Param("password")String password);

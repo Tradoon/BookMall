@@ -50,4 +50,7 @@ public class CommonResult<T> {
     public static <T> CommonResult<T> failed(String message){
         return new CommonResult<T>(ResultCode.FAILED.getCode(),message, null);
     }
+    public static <T> CommonResult<T> failed(long code,String message){
+        return new CommonResult<T>(code,message, null);
+    }
 }
