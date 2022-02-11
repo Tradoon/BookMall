@@ -7,9 +7,16 @@ spring:
     multipart:
       enabled: true
       max-file-size: 10MB
+      #redis
   redis:
     host: 127.0.0.1
     port: 6379
+    #datasource
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 #      扫描Mappeer接口对应xml文件
 
 #配置redis
