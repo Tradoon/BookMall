@@ -7,6 +7,7 @@ import com.tradoon.mallmbg.model.UmsAdmin;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,13 +24,13 @@ public class UmsAdminController {
     AdminService adminService;
     @ApiOperation(value ="用户注册",httpMethod = "POST")
     @PostMapping("/register")
-    public CommonResult<UmsAdmin> register(UmsAdmin user){
+    public CommonResult<UmsAdmin> register(@RequestBody UmsAdmin user){
 
         return  adminService.register(user);
     }
     @ApiOperation(value = "用户登录",httpMethod = "POST")
     @PostMapping("/login")
-    public CommonResult login(UmsAdmin user){
+    public CommonResult login(@RequestBody UmsAdmin user){
         return adminService.login(user);
 }
 }

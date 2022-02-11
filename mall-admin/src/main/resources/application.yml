@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: mall-admin
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+#      扫描Mappeer接口对应xml文件
+
+#配置redis
+redis:
+  database:mall
+  key:
+    admin: 'ums:admin'
+    resourceList: 'ums:resourceList'
+  expire:
+    common:86400
+
+#springSecurity拦截白名单
+secure:
+  ignored:
+    urls:
+      - /swagger-ui.html
+        - /swagger-resources/**
+        - /swagger/**
+        - /**/v2/api-docs
+        - /**/*.js
+        - /**/*.css
+        - /**/*.png
+        - /**/*.ico
+        - /webjars/springfox-swagger-ui/**
+        - /actuator/**
+        - /druid/**
+        - /admin/login
+        - /admin/register
+        - /admin/info
+        - /admin/logout
+        - /minio/upload
