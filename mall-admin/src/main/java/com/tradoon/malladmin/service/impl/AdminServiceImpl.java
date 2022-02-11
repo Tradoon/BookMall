@@ -82,4 +82,10 @@ public class AdminServiceImpl implements AdminService {
             return ;
         }
     }
+    //应户名或者姓名分页获取用户列表
+
+    //修改指定用户的密码/重置密码
+    //删除只当用户的信息/status置为0
+    //修改账号状态
+
 }
