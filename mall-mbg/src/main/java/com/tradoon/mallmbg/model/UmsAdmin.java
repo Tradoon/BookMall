@@ -1,6 +1,5 @@
 package com.tradoon.mallmbg.model;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.stereotype.Component;

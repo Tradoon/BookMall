@@ -2,17 +2,22 @@ package com.tradoon.mallsecurity.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * author:tradoon
  * desciption:对SpringSecurity进行配置
  * date:
  */
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
    @Autowired
    IgnoreUrlsConfig ignoreUrlsConfig;
@@ -44,5 +49,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated();
         //动态配置
     }
-
+    @Bean
+   public  PasswordEncoder getPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+}
 }

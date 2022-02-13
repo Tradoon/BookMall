@@ -1,11 +1,8 @@
 package com.tradoon.mallsecurity.service;
-
-import com.tradoon.malladmin.dao.UmsAdminMapper;
+import com.tradoon.mallmbg.dao.UmsAdminMapper;
 import com.tradoon.mallmbg.model.UmsAdmin;
 import com.tradoon.mallsecurity.component.AdminUserDetails;
-import net.logstash.logback.encoder.org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,7 +13,7 @@ import java.util.Objects;
 /**
  * author:tradoon
  * desciption:
- * date:2022/ / /
+ * date:2022/02/12/
  */
 @Component
 public class UserDtailsServiceImpl implements UserDetailsService {

@@ -1,7 +1,6 @@
 package com.tradoon.malladmin.controller;
 
 import com.tradoon.bookmall.common.api.CommonResult;
-import com.tradoon.bookmall.common.api.ResultCode;
 import com.tradoon.malladmin.service.AdminService;
 import com.tradoon.mallmbg.model.UmsAdmin;
 import io.swagger.annotations.ApiOperation;
@@ -30,8 +29,9 @@ public class UmsAdminController {
     public CommonResult login(@RequestBody UmsAdmin user){
         return adminService.login(user);
 }
-@ApiOperation(value = "获取指定用户的信息",httpMethod = "GET")
-@GetMapping("/{id}")
+
+    @ApiOperation(value = "获取指定用户的信息",httpMethod = "GET")
+    @GetMapping("/{id}")
     public CommonResult<UmsAdmin> getItem(@PathVariable Long id){
         return adminService.getItem(id);
 }

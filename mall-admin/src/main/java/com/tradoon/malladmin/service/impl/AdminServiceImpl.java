@@ -2,12 +2,11 @@ package com.tradoon.malladmin.service.impl;
 
 import com.tradoon.bookmall.common.api.CommonResult;
 import com.tradoon.bookmall.common.api.ResultCode;
-import com.tradoon.malladmin.dao.UmsAdminMapper;
+import com.tradoon.mallmbg.dao.UmsAdminMapper;
 import com.tradoon.malladmin.service.AdminService;
 import com.tradoon.mallmbg.model.UmsAdmin;
 import net.logstash.logback.encoder.org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -46,21 +45,21 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public CommonResult<UmsAdmin> login(UmsAdmin user) {
-        if(StringUtils.isNotBlank(user.getUsername())&&StringUtils.isNotBlank(user.getPassword())){
-            UmsAdmin umsAdmin = adminMapper.selectByNameAndKey(user.getUsername(), null);
-            if(umsAdmin==null)
-                //用户名不存在
-                return CommonResult.failed(ResultCode.NOADMIN.getCode(), ResultCode.NOADMIN.getMessage());
-            if(!passwordEncoder.matches(user.getPassword(),umsAdmin.getPassword())){
-                //密码错误
-                return CommonResult.failed(ResultCode.PASSWORDERRO.getCode(), ResultCode.PASSWORDERRO.getMessage());
-
-            }else{
-               // todo 改成token
-                return CommonResult.success(umsAdmin);
-                //  new UsernamePasswordAuthenticationToken(umsAdmin,null,)
-               }
-        }
+//        if(StringUtils.isNotBlank(user.getUsername())&&StringUtils.isNotBlank(user.getPassword())){
+//            UmsAdmin umsAdmin = adminMapper.selectByNameAndKey(user.getUsername(), null);
+//            if(umsAdmin==null)
+//                //用户名不存在
+//                return CommonResult.failed(ResultCode.NOADMIN.getCode(), ResultCode.NOADMIN.getMessage());
+//            if(!passwordEncoder.matches(user.getPassword(),umsAdmin.getPassword())){
+//                //密码错误
+//                return CommonResult.failed(ResultCode.PASSWORDERRO.getCode(), ResultCode.PASSWORDERRO.getMessage());
+//
+//            }else{
+//               // todo 改成token
+//                return CommonResult.success(umsAdmin);
+//                //  new UsernamePasswordAuthenticationToken(umsAdmin,null,)
+//               }
+//        }
         return CommonResult.failed();
     }
 

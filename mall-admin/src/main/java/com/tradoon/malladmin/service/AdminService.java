@@ -1,7 +1,6 @@
 package com.tradoon.malladmin.service;
 
 import com.tradoon.bookmall.common.api.CommonResult;
-import com.tradoon.bookmall.common.api.ResultCode;
 import com.tradoon.mallmbg.model.UmsAdmin;
 
 /**

@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.tradoon.bookMall</groupId>
-            <artifactId>mall-admin</artifactId>
+            <artifactId>mall-mbg</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
